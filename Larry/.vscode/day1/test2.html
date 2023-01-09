@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut Icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <style>
+        .blue{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title"></h1>
+    <button id="clickme">click me</button>
+
+    <script>
+        $(function () {
+            $('#title').html('hopp');
+            console.log($('#title').html);
+        });
+
+        $('#clickme')
+        .click(function (e) { 
+            e.preventDefault();
+            $('#title').addClass('blue');
+            $(this).html('clicked'); //zeigt clicked an
+            $('body').append('<hr> <h1>test</h1>'); //fügt das nach append im body hinzu
+
+            //$('#title').toggle();
+        })
+        $('#clickme')
+        .dblclick(function (e) {
+            e.preventDefault();
+            $('#title').removeClass('blue');
+            $(this).html('double clicked');
+        })
+    </script>
+    
+</body>
+</html>

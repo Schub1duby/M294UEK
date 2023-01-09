@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de-ch">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modul 294 CRDU- Frontend">
+    <meta name="robots" content="index, follow">
+    <title>Welcome to Moviequotes.org</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="./android-icon-48x48.png" type="image/x-icon">
+    <!--Für die Schrift Roboto zuständig-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--Holt das Two Tone Icon-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone"rel="stylesheet">
+    <!--Holt das normale Icon-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!--JQuery einbinden-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); 
+        /* latin 
+        Mit font-face wird einfach nur der Lateinische Schriftsatz importiert. Spart Speicher und Performance*/
+        @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+    </style>
+
+</head>
+<body>
+    <h1>Tag 1: Icons</h1>
+
+    <!--https://isotropic.co/tool/hex-color-to-css-filter für andere Farben-->
+    <h2>Two Tone Icon mit blauer Farbe versehen</h2>
+    <span class="material-icons-two-tone" style="filter: invert(0.5) sepia(1) saturate(10) hue-rotate(180deg);" >
+    account_circle
+    </span>
+
+    <h2>andere Icons mit anderer Farbe versehen</h2>
+    <span class="material-symbols-outlined" style="color: red;">
+    menu
+    </span>
+    
+    <h2>Andere Schriftwart einfügen</h2>
+    <p id="andereSchrift">Das ist ein Text mit anderer Schrift</p>
+
+
+
+
+    <h1>Tag 1: JS erste Skripte</h1>
+
+    <h2 id="Versuch"></h2>
+
+    <Button id="button1">Click Me</Button>
+    <script src="../js/index.js">  </script>
+
+
+
+</body>
+</html>
