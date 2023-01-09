@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M294</title>
+
+    <!-- jquery einbinden -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+</head>
+
+<body>
+    <h1 id="title">jQuery</h1>
+
+    <div id="test">ich bin ein test</div>
+    <div class="testing">ich bin ein test</div>
+
+    <button class="cta">I am a button</button>
+
+    <br><br>
+    <input type="text" id="name">
+    <button id="send">senden</button>
+    <script>
+        $('#send').click(function (e) {
+            e.preventDefault();
+            let name = $('#name').val();
+            console.log(name);
+        })
+    </script>
+
+    <!-- JS -->
+    <script type="text/JavaScript" src="js/start.js"></script>
+</body>
+
+</html>
