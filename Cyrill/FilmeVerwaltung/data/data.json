@@ -3,7 +3,7 @@
         {
             "id": 1,
             "FilmTitel": "Back To The Future",
-            "ReleaseYear": 1985,
+            "ReleaseDate": "1985-07-03",
             "Regisseur": "Robert Zemeckis",
             "Genre": "Science-Fiction",
             "NumberFranchise": 3
@@ -11,7 +11,7 @@
         {
             "id": 2,
             "FilmTitel": "Evil Dead 2",
-            "ReleaseYear": 1987,
+            "ReleaseDate": "1987-03-13",
             "Regisseur": "Sam Raimi",
             "Genre": "Horror",
             "NumberFranchise": 4
@@ -19,7 +19,7 @@
         {
             "id": 3,
             "FilmTitel": "The Godfather",
-            "ReleaseYear": 1972,
+            "ReleaseDate": "1972-03-24",
             "Regisseur": "Francis Ford Coppola",
             "Genre": "Drama",
             "NumberFranchise": 3

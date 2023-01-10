@@ -12,8 +12,8 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="release-year" type="text" class="validate">
-                <label for="release-year">Release Year</label>
+                <input type="text" class="datepicker release-date">
+                <label for="release-date">Release Year</label>
             </div>
         </div>
         <div class="row">
@@ -24,8 +24,17 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <input id="genre" type="text" class="validate">
-                <label for="genre">Genre</label>
+                <label>Genre</label>
+                <select>
+                    <option value="choose" disabled selected>Choose your option</option>
+                    <option value="SciFi">Science Fiction</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Warfilm">Kriegsfilm</option>
+                    <option value="Adventure">Adeventure</option>
+                    <option value="Action">Action</option>
+                </select>
             </div>
         </div>
         <div class="row">

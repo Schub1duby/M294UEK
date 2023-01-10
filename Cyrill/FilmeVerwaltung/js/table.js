@@ -33,12 +33,6 @@ $.get("template/table.hbs",
                     console.log("Löschen: " + id);
                 });
                 
-                $('#add').click(function (e) {
-                    e.preventDefault();
-                    $('#modal-title').html("Neuer Datensatz");
-                    $('#modal-content').load("pages/form.html");
-                    $('.modal').modal('open');
-                });
             }
         );
     }
