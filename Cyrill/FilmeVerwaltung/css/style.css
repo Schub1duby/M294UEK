@@ -1,0 +1,11 @@
+a {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+}
+
+li{
+    display: inline-block;
+}
+
