@@ -1,1 +1,5 @@
-$('#modalText').load("sites/form.html");
+
+
+
+    $('select').formSelect();
+

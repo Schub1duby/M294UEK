@@ -8,15 +8,21 @@ $(document).ready(function(){
         e.preventDefault();
     });
 
+    M.toast({html: 'Heissi Füzz i dinre nöchi!'})
+
     $('.modal').modal();
 
     $('#add').click(function (e){
         e.preventDefault();
         $('#modalTitle').html("Add Car");
         $('.modal').modal('open');
-        $.getScript("js/form.js");
+        $('#modalText').load("sites/form.html",function(){
+            $.getScript("js/form.js");
+        });
+        
     })
   });
+
 
 
 

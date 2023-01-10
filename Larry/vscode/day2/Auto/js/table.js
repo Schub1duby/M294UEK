@@ -19,7 +19,9 @@ $.get("template/table.hbs",
                     console.log(id + " bearbeiten");
                     $('#modalTitle').html("edit number " + id);
                     $('.modal').modal('open');
-                    $.getScript("js/form.js");
+                    $('#modalText').load("sites/form.html",function(){
+                        $.getScript("js/form.js");
+                    });
                 });
                 
                 $('.deleteBtn').click(function (e) {

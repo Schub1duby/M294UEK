@@ -6,7 +6,7 @@
             "treibstoff": "Diesel",
             "farbe": "0000FF",
             "bauart": "Limousine",
-            "tank": "Tank"
+            "tank": "0"
         },
         {
             "id": 2,
@@ -14,7 +14,7 @@
             "treibstoff": "Benzin",
             "farbe": "00FF00",
             "bauart": "SUV",
-            "tank": "Tank"
+            "tank": "0"
         },
         {
             "id": 3,
@@ -22,7 +22,7 @@
             "treibstoff": "Elektro",
             "farbe": "FF0000",
             "bauart": "Pickup",
-            "tank": "Tank"
+            "tank": "0"
         }
     ]
 }
