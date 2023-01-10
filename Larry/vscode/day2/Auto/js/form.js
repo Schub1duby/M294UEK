@@ -1,0 +1,1 @@
+$('#modalText').load("sites/form.html");

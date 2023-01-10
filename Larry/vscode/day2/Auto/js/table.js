@@ -1,11 +1,34 @@
-$('.carBtn').click(function (e){
-    console.log("Auto wird getankt");
-});
+$.get("template/table.hbs",
+    function (response) {
+        //console.log(response);
+        var template = Handlebars.compile(response);
+        $.getJSON("data/data.json",
+            function (response) {
+                //console.log(response);
+                $('tbody').html(template(response));
 
-$('.penBtn').click(function (e){
-    console.log("bearbeiten");
-});
+                $('.carBtn').click(function (e) {
+                    e.preventDefault();
+                    var id = $(this).parent().parent().attr('data-id');
+                    console.log("Auto " + id + " wird getankt");
+                });
+                
+                $('.penBtn').click(function (e) {
+                    e.preventDefault();
+                    var id = $(this).parent().parent().attr('data-id');
+                    console.log(id + " bearbeiten");
+                    $('#modalTitle').html("edit number " + id);
+                    $('.modal').modal('open');
+                    $.getScript("js/form.js");
+                });
+                
+                $('.deleteBtn').click(function (e) {
+                    e.preventDefault();
+                    var id = $(this).parent().parent().attr('data-id');
+                    console.log(id + " loeschen");
+                });
+            });
+    },);
 
-$('.deleteBtn').click(function (e){
-    console.log("loeschen");
-});
+
+
