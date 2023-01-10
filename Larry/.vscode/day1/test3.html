@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+<body>
+    <input id="name" type="text">
+    <button id="send">senden</button>
+
+    <script>
+        $('#send').click(function (e) { 
+            e.preventDefault();
+            let name = $('#name').val();
+            console.log(name);
+            $('body').append('hello ' + name)
+        });
+    </script>
+</body>
+</html>
