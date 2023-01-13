@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!--Materialize CSS-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="shortcut Icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!--Farben der Felder-->
+    <style>
+        input[type=range]::-webkit-slider-thumb {
+            background-color: red;
+        }
+
+        input[type=range]::-moz-range-thumb {
+            background-color: red;
+        }
+
+        input[type=range]::-ms-thumb {
+            background-color: red;
+        }
+
+        /***** These are to edit the thumb and the text inside the thumb *****/
+        input[type=range]+.thumb {
+            background-color: #dedede;
+        }
+
+        input[type=range]+.thumb.active .value {
+            color: red;
+        }
+    </style>
+    <!--HTML - Code-->
+    <br>
+    <form action="#">
+        <p class="range-field">
+            <input type="range" id="test5" min="0" max="100" value="10" />
+        </p>
+    </form>
+    <button id="lesen">Lesen</button>
+    <button id="setzen">Setzen</button>
+    <!-- JS - werte lesen und setzen-->
+    <script>
+        $('#lesen').click(function (e) {
+            e.preventDefault();
+            console.log($("#test5").val());
+        });
+        $('#setzen').click(function (e) {
+            e.preventDefault();
+            var number = "80";
+            $("#test5").val(number);
+        });
+
+        window.onload = function () {
+            var elems = document.querySelectorAll("input[type=range]");
+            M.Range.init(elems);
+        };
+    </script>
+</body>
+
+</html>

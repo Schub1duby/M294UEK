@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!--Materialize CSS-->
+    <!-- Compiled and minified CSS -->
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="shortcut Icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!--Farben der Felder-->
+    <style>
+        [type="checkbox"]:checked+span:before,
+        [type="checkbox"]:checked+span:not(.lever):before,
+        [type="checkbox"].with-gap:checked+span:before
+        {
+            border-right: 2px solid red !important;
+            border-bottom: 2px solid red !important;
+        }
+        [type="checkbox"].filled-in:checked+span:after {
+            border: 2px solid white !important;
+            background-color: red !important;
+        }
+
+        
+        [type="checkbox"].filled-in:checked+span::before{
+            border-right: 2px solid white !important;
+            border-bottom: 2px solid white !important;
+        }
+    </style>
+    <!--HTML - Code-->
+    <p>
+        <label>
+            <input type="checkbox" value="r" />
+            <span>Red</span>
+        </label>
+    </p>
+    <p>
+        <label>
+            <input type="checkbox" checked="checked" value="y" />
+            <span>Yellow</span>
+        </label>
+    </p>
+    <p>
+        <label>
+            <input type="checkbox" class="filled-in" checked="checked" value="f" />
+            <span>Filled in</span>
+        </label>
+    </p>
+    <p>
+        <label>
+            <input id="indeterminate-checkbox" type="checkbox" value="i" />
+            <span>Indeterminate Style</span>
+        </label>
+    </p>
+    <p>
+        <label>
+            <input type="checkbox" checked="checked" disabled="disabled" value="g" />
+            <span>Green</span>
+        </label>
+    </p>
+    <p>
+        <label>
+            <input type="checkbox" disabled="disabled" value="b" />
+            <span>Brown</span>
+        </label>
+    </p>
+
+    <button id="lesen">Lesen</button>
+    <button id="setzen">Setzen</button>
+
+    <!-- JS - werte lesen und setzen-->
+    <script>
+        $('#lesen').click(function (e) {
+            e.preventDefault();
+
+            $("input:checkbox:checked").each(function () {
+                console.log($(this).val());
+            })
+        });
+        $('#setzen').click(function (e) {
+            e.preventDefault();
+            var radio = "r";
+            $("input:checkbox").each(function () {
+                if ($(this).val() == radio) {
+                    $(this).prop("checked", true)
+                }
+            })
+        });
+    </script>
+
+</body>
+
+</html>

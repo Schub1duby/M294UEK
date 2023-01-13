@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!--Materialize CSS-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="shortcut Icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!--Farben der Felder-->
+    <style>
+        .input-field input[type=text]:focus {
+            border-bottom: 2px solid red !important;
+            -webkit-box-shadow: 0 2px 0 0 red !important;
+            -moz-box-shadow: 0 2px 0 0 red !important;
+            box-shadow: 0 2px 0 0 red !important;
+        }
+
+        .dropdown-content li>a,
+        .dropdown-content li>span {
+            color: black;
+        }
+    </style>
+    <!--HTML - Code-->
+    <!--ID in den Select!!-->
+    <div class="input-field col s12" >
+        <select id="1">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+        <label>Materialize Select</label>
+    </div>
+
+    <div class="input-field col s12" >
+        <select multiple id="2">
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+        <label>Materialize Multiple Select</label>
+    </div>
+
+    <div class="input-field col s12">
+        <select id="3">
+            <optgroup label="team 1">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+            </optgroup>
+            <optgroup label="team 2">
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+            </optgroup>
+        </select>
+        <label>Optgroups</label>
+    </div>
+    <button id="lesen">Lesen</button>
+    <button id="setzen">Setzen</button>
+    <!-- JS - werte lesen und setzen-->
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+
+
+
+        $('#lesen').click(function (e) {
+            e.preventDefault();
+
+            $("select").each(function () {
+                console.log($(this).val());
+            })
+        });
+        $('#setzen').click(function (e) {
+            e.preventDefault();
+            var number = "3";
+            $('#2').val("3");
+            $('select').formSelect();
+        });
+
+    </script>
+</body>
+
+</html>

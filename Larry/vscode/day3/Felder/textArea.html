@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!--Materialize CSS-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="shortcut Icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+     <!--Farben der Felder-->
+     <style>
+        /* Label - Text Farbe bei focus */
+        .input-field textarea:focus+label {
+           color: red !important;
+           
+       }
+
+       /* Input Feld - underline color bei focus */
+       .input-field textarea:focus
+       {
+           border-bottom: 2px solid red !important;
+           -webkit-box-shadow: 0 2px 0 0 red !important;
+           -moz-box-shadow: 0 2px 0 0 red !important;
+           box-shadow: 0 2px 0 0 red !important;
+       }
+       </style>
+   <!--HTML - Code-->
+
+    <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Textarea</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <button id="lesen">Lesen</button>
+      <button id="setzen">Setzen</button>
+          <!-- JS - werte lesen und setzen-->
+    <script>
+        $('#lesen').click(function (e) {
+            e.preventDefault();
+                console.log($(".materialize-textarea").val());
+            });
+        $('#setzen').click(function (e) {
+            e.preventDefault();
+            $('.materialize-textarea').val('Harald');
+        });
+      </script>
+</body>
+
+</html>

@@ -2,7 +2,8 @@ $.get("template/table.hbs",
     function (response) {
         //console.log(response);
         var template = Handlebars.compile(response);
-        $.getJSON("data/data.json",
+        //$.getJSON("data/data.json",
+        $.getJSON("vscode\day2\Auto\api.php",
             function (response) {
                 //console.log(response);
                 $('tbody').html(template(response));

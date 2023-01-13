@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!--Materialize CSS-->
+    <!-- Compiled and minified CSS -->
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="shortcut Icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <!--Farben der Felder-->
+    <style>
+        .switch label .lever{
+          background-color: rgb(255, 0, 21);
+        }
+        .switch label .lever::after{
+          background-color: rgb(252, 132, 142);
+        }
+        .switch label input[type=checkbox]:checked+.lever::after{
+          background-color: rgb(0, 255, 0);
+        }
+        .switch label input[type=checkbox]:checked+.lever{
+          background-color: rgb(146, 255, 155);
+        }
+    </style>
+    
+    <!--HTML - Code-->
+     <!-- Switch -->
+  <div class="switch">
+    <label>
+      Off
+      <input type="checkbox">
+      <span class="lever"></span>
+      On
+    </label>
+  </div>
+
+      <button id="lesen">Lesen</button>
+      <button id="setzen">Setzen</button>
+    <!-- JS - werte lesen und setzen-->
+      <script>
+        $('#lesen').click(function (e) {
+            e.preventDefault();
+                console.log($(".switch label .lever").val());
+            
+        });
+        $('#setzen').click(function (e) {
+            e.preventDefault();
+            $(".switch label .lever").prop("checked", true);
+        });
+      </script>
+
+</body>
+
+</html>
