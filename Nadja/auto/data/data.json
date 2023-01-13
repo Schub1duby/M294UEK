@@ -1,0 +1,31 @@
+{
+    "auto": [
+        {
+            "id": 1,
+            "name": "Passat",
+            "kraftstoff": "Diesel",
+            "farbe": "#000000",
+            "bauart": "Limousine",
+            "tank": 0
+
+        },
+        {
+            "id": 2,
+            "name": "Opel",
+            "kraftstoff": "Benzin",
+            "farbe": "#2196f3",
+            "bauart": "SUV",
+            "tank": 0
+
+        },
+        {
+            "id": 3,
+            "name": "VW",
+            "kraftstoff": "Elektro",
+            "farbe": "#4caf50",
+            "bauart": "Pickup",
+            "tank": 0
+
+        }
+    ]
+}

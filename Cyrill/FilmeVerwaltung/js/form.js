@@ -1,0 +1,2 @@
+$('select').formSelect();
+$('.datepicker').datepicker();
