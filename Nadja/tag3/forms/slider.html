@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuerry https://cdnjs.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- Materialize CSS ->  https://materializecss.com/getting-started.html -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- handlebars von cdnjs.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+
+    <title>Tag 3 - Slider</title>
+</head>
+
+<body>
+    <!-- Farben der Felder -->
+    <style>
+        .pos {
+            width: 80%;
+            height: 35px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        input[type=range]+.thumb {
+            background-color: blue;
+        }
+
+        input[type=range]+.thumb .value {
+            color: blue;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            background-color: blue;
+        }
+
+        input[type=range]::-moz-range-thumb {
+            background-color: blue;
+        }
+
+        input[type=range]::-ms-thumb {
+            background-color: blue;
+        }
+    </style>
+
+    <!-- HTML Code (korrekt erstellen können) -->
+    <h3>Range</h3>
+    <div class="pos">
+        <form action="#">
+            <p class="range-field">
+                <input type="range" id="test5" min="0" max="100" />
+            </p>
+        </form>
+
+        <button id="lesen">lesen</button>
+        <button id="setzen">setzen</button>
+
+    </div>
+
+    <!-- JS - Werte lesen und setzen -->
+    <script>
+        window.onload = function () {
+
+            var elems = $('input[type=range]');
+
+            M.Range.init(elems);
+
+        };
+
+        $('#lesen').click(function (e) { 
+            e.preventDefault();
+            
+            console.log($('.value').html());
+        });
+
+        $('#setzen').click(function (e) { 
+            e.preventDefault();
+            
+            let val = '23';
+            $('input').prop('value', val);
+            $('.value').html(val);
+        });
+    </script>
+
+</body>

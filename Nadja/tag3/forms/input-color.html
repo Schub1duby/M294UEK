@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuerry https://cdnjs.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- Materialize CSS ->  https://materializecss.com/getting-started.html -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- handlebars von cdnjs.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+
+    <title>Tag 3 - Input Color Picker</title>
+</head>
+
+<body>
+    <!-- Farben der Felder -->
+    <style>
+        .input-pos {
+            width: 100%;
+            height: 35px;
+            margin-top: 50px
+        }
+    </style>
+
+    <!-- HTML Code (korrekt erstellen können) -->
+    <div class="row">
+        <div class="input-field col s6">
+            <input placeholder="Placeholder" id="color" type="color" class="validate input-pos">
+            <label for="color">Color1</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="color2" type="color" class="validate input-pos">
+            <label for="color2">Color2</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="color3" type="color" class="validate input-pos">
+            <label for="color3">Color3</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="color4" type="color" class="validate input-pos">
+            <label for="color4">Color4</label>
+        </div>
+    </div>
+
+    <button id="lesen">lesen</button>
+    <button id="setzen">setzen</button>
+
+    <!-- JS - Werte lesen und setzen -->
+    <script>
+        $('#lesen').click(function (e) {
+            e.preventDefault();
+
+            console.log($('#color1'));
+
+        });
+
+        $('#setzen').click(function (e) {
+            e.preventDefault();
+
+        });
+    </script>
+
+</body>

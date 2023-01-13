@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuerry https://cdnjs.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- Materialize CSS ->  https://materializecss.com/getting-started.html -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- handlebars von cdnjs.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+
+    <title>Tag 3 - Input Date Picker</title>
+</head>
+
+<body>
+    <!-- Farben der Felder -->
+    <style>
+        .pos {
+            margin-top: 50px;
+            margin-left: 50px;
+            width: 50%;
+        }
+
+        /* border line on focus change color */
+        input[type="text"]:not(.browser-default):focus:not([readonly]) {
+            border-bottom: 1px solid red;
+            box-shadow: 0 1px 0 0 red;
+        }
+    </style>
+
+    <!-- HTML Code (korrekt erstellen können) -->
+    <div class="input-field pos">
+        <label for="datePicker">Date</label>
+        <input type="text" id="datePicker" class="datepicker">
+    </div>
+
+    <button id="lesen">lesen</button>
+    <button id="setzen">setzen</button>
+
+    <!-- JS - Werte lesen und setzen -->
+    <script>
+        $(document).ready(function () {
+                $('.datepicker').datepicker({
+                    format: "dd/mmmm/yyyy",
+                    i18n: {
+                        months: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August',
+                            'September', 'Oktober', 'November', 'Dezember'
+                        ],
+                        monthsShort: ['Jan', 'Feb', 'Mär', 'Mai', 'Apr', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt',
+                            'Nov', 'Dez'
+                        ],
+                        weekdays: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag',
+                            'Samstag'
+                        ],
+                        weekdaysShort: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa']
+                    }
+
+                });
+
+                $('#lesen').click(function (e) {
+                    e.preventDefault();
+
+                    console.log($('#datePicker').val());
+                });
+
+                $('#setzen').click(function (e) {
+                    e.preventDefault();
+
+                    let elem = $('.datepicker');
+                    var date = new Date(2023, 0, 06);
+                    var instances = M.Datepicker.init(elem, {
+                        defaultDate: date,
+                        setDefaultDate: true,
+                        format: 'dd/mmmm/yyyy'
+                    });
+                });
+            });
+    </script>
+
+</body>

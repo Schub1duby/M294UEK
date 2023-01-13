@@ -1,15 +1,15 @@
-{{#each auto}}
+{{#each data}}
 
 <tr data-id="{{id}}">
     <td>{{id}}</td>
     <td>{{name}}</td>
     <td>{{kraftstoff}}</td>
     <td>
-        <div class="black colorfield"></div>
+        <div class="{{farbe}} colorfield"></div>
         {{farbe}}
     </td>
     <td>{{bauart}}</td>
-    <td>{{tank}}</td>
+    <td>{{tanken}}</td>
     <td>
         <i class="material-icons blue-text btn white tank">directions_car</i>
         <i class="material-icons green-text btn white edit">edit</i>

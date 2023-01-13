@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuerry https://cdnjs.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- Materialize CSS ->  https://materializecss.com/getting-started.html -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- handlebars von cdnjs.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+
+    <title>Tag 3 - Textarea</title>
+</head>
+
+<body>
+    <!-- Farben der Felder -->
+    <style>
+        .switch label input[type=checkbox]:checked+.lever {
+            background-color: blue;
+        }
+        .switch label input[type=checkbox]:checked+.lever:after {
+            background-color: rgb(8, 8, 183);
+        }
+
+    </style>
+
+    <!-- HTML Code (korrekt erstellen können) -->
+    <div class="switch">
+        <label>
+            Off
+            <input type="checkbox">
+            <span class="lever"></span>
+            On
+        </label>
+    </div>
+
+    <button id="lesen">lesen</button>
+    <button id="setzen">setzen</button>
+
+    <!-- JS - Werte lesen und setzen -->
+    <script>
+        $('#lesen').click(function (e) { 
+            e.preventDefault();
+            console.log("checked: " + $('input:checkbox')[0].checked);
+        });
+
+        $('#setzen').click(function (e) { 
+            e.preventDefault();
+            
+            let s = true;
+            if ($('input:checkbox')[0].checked != s) {
+                $('input:checkbox')[0].checked == s;
+            }
+        });
+
+    </script>
+
+</body>
