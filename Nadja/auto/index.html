@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuerry https://cdnjs.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- Materialize CSS ->  https://materializecss.com/getting-started.html -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- handlebars von cdnjs.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/JavaScript" src="js/main.js" defer></script>
+
+    <title>Auto</title>
+</head>
+
+<body>
+    <nav class="grey">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Logo</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li class="black-text">
+                    <i class="material-icons">brightness_1</i>
+                    <a class="black-text" href="https://materializecss.com/">MATERIALIZE CSS</a></li>
+                <li class="blue-text">
+                    <i class="material-icons">brightness_1</i>
+                    <a class="blue-text" href="badges.html">GEEKLAPS</a></li>
+                <li class="red-text">
+                    <i class="material-icons">brightness_1</i>
+                    <a class="red-text" href="https://ict-berufsbildung.info/">MOODLE</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li class="black-text">
+            <i class="material-icons">brightness_1</i>
+            <a class="black-text" href="https://materializecss.com/">MATERIALIZE CSS</a></li>
+        <li class="blue-text">
+            <i class="material-icons">brightness_1</i>
+            <a class="blue-text" href="badges.html">GEEKLAPS</a></li>
+        <li class="red-text">
+            <i class="material-icons">brightness_1</i>
+            <a class="red-text" href="https://ict-berufsbildung.info/">MOODLE</a></li>
+    </ul>
+
+    <!-- modal trigger -->
+    <button href="#modal1" class="modal-trigger btn add red white-text">
+        <i class="icon material-icons">add</i>
+    </button>
+
+    <main>
+
+    </main>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4 id="modalTitle"></h4>
+            <p id="modalContent"></p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn">Save</a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
