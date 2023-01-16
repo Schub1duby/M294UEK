@@ -17,3 +17,15 @@ a {
     align-items: center !important;
     justify-content: center !important;
 }
+
+.carBtn{
+    background-color: transparent !important;
+}
+
+.penBtn{
+    background-color: transparent !important;
+}
+
+.deleteBtn{
+    background-color: transparent !important;
+}

@@ -3,7 +3,7 @@ $.get("template/table.hbs",
         //console.log(response);
         var template = Handlebars.compile(response);
         //$.getJSON("data/data.json",
-        $.getJSON("vscode\day2\Auto\api.php",
+        $.getJSON("api.php",
             function (response) {
                 //console.log(response);
                 $('tbody').html(template(response));
@@ -12,6 +12,27 @@ $.get("template/table.hbs",
                     e.preventDefault();
                     var id = $(this).parent().parent().attr('data-id');
                     console.log("Auto " + id + " wird getankt");
+                    $.ajax({
+                        type: "GET",
+                        url: "api.php?id=" +id,
+                        data: "data",
+                        dataType: "JSON",
+                        success: function (response) {
+                            console.log(response);
+                        }
+                    });
+
+                    $.ajax({
+                        type: "POST",
+                        url: "api.php?id=" +id,
+                        data: {
+                            tank: $(".tank") + 1,
+                        },
+                        dataType: "JSON",
+                        success: function (response) {
+                            
+                        }
+                    });
                 });
                 
                 $('.penBtn').click(function (e) {
