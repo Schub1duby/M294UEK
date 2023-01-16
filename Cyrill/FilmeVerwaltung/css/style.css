@@ -9,3 +9,8 @@ li{
     display: inline-block;
 }
 
+.color-input{
+    width:100%;
+    height: 35px;
+    margin-top: 50px;
+}

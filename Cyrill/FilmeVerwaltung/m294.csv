@@ -1,0 +1,5 @@
+id;FilmTitel;ReleaseYear;Regisseur;Genre;NumberOfMoviesInFranchise;FSK;Bemerkung;Checkbutton
+1;Back To The Future;1985-12-04;Robert Zemeckis;Science Fiction;3;blue;Bemerkung;checked
+2;Evil Dead 2;1987-06-26;Sam Raimi;Horror;4;yellow;Bemerkung;checked
+3;Godfather;1972-02-14;Francis Ford Coppola;Drama;3;blue;Bemerkung;checked
+4;Army of Darkness;;;;;;Halli Hallo;

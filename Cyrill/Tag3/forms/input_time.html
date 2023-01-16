@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmverwaltung</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!--Materialize muss zwischen JQuery und dem JS eingebunden werden-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <style>
+        /*Mithilfe der Dev Tools, lässt sich das relativ einfach gestalten*/
+        
+        .topmargin {
+            margin-top: 30px;
+        }
+
+        #Absatz1 {
+            text-align: center;
+        }
+
+        .timepicker-digital-display{
+            background-color: blue;
+        }
+
+        .timepicker-tick{
+            color: orange;
+        }
+       
+    </style>
+
+
+    <h2 class="center">Time Picker</h2> 
+    <p id="Absatz1"> 
+        <a class="center" href="https://materializecss.com/pickers.html" 
+            target="_blank">https://materializecss.com/pickers.html</a>; 
+    </p> 
+    <hr> 
+ 
+    <h3 class="center">Uhrzeit</h3> 
+    <p class="center">Per JS wird nach 2 Sekunden das aktuelle Datum gesetzt.</p> 
+    <div class="topmargin row"> 
+        <div class="input-field col s4 offset-s4"> 
+            <input id="mytime" type="text" class="timepicker" /> 
+        </div> 
+    </div> 
+ 
+    <p id="Absatz1"> 
+        <button class="btn" id="WerteLesen">Werte auslesen</button> 
+    </p>
+
+    <script>
+
+        
+
+        $(function () {
+
+
+            $('.timepicker').timepicker({
+                showClearBtn: true,
+                twelveHour: false, //aktiviere 24h Anzeige
+                defaultTime: 'now',
+                autoClose: true, //Schliesst Picker, wenn die Zeit ausgewählt wurde
+                vibrate: true //vibiert das Device, wenn die Zeit ausgewählt wurde
+            });
+        });
+        //Setup von Timepicker mehr auf: https://materializecss.com/pickers.html
+
+
+        $('#WerteLesen').click(function (e) {
+            e.preventDefault()
+
+            console.log($('.timepicker').val());
+
+        });
+
+
+    </script>
+</body>
+
+</html>

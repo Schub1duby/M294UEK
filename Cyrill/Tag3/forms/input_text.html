@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmverwaltung</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!--Materialize muss zwischen JQuery und dem JS eingebunden werden-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+</head>
+
+<body>
+
+</body>
+
+<style>
+    .topmargin {
+        margin-top: 30px;
+    }
+
+    /* Label - Text Farbe bei focus */
+    .input-field input:focus+label {
+        color: green !important;
+    }
+
+    /* Input Feld - underline color bei focus */
+    .input-field input[type=text]:focus {
+        border-bottom: 2px solid green !important;
+        -webkit-box-shadow: 0 2px 0 0 green !important;
+        -moz-box-shadow: 0 2px 0 0 green !important;
+        box-shadow: 0 2px 0 0 green !important;
+    }
+
+    /* ICON - Farbe bei active*/
+    .input-field .prefix.active {
+        color: green !important;
+    }
+
+    #Absatz1 {
+        text-align: center;
+    }
+
+    /* label color */
+    .input-field label {
+        color: blue;
+    }
+</style>
+
+
+
+<h2 class="center">Text Inputs</h2>
+<p id="Absatz1">
+    <a class="center" href="https://materializecss.com/text-inputs.html"
+        target="_blank">https://materializecss.com/text-inputs.html</a>;
+</p>
+<hr>
+
+<!--Input ohne Placeholder-->
+<h4 class="center">Input ohne Placeholder</h4>
+<p class="center">Wert wird nach 2 Sekunden gesetzt.</p>
+<div class="topmargin row">
+    <div class="input-field col s4 offset-s4">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="first_name" type="text" class="validate">
+        <label for="first_name">First Name</label>
+    </div>
+</div>
+<!--Input mit Placeholder-->
+<h4 class="center">Input mit Placeholder</h4>
+<div class="topmargin row">
+    <div class="input-field col s4 offset-s4">
+        <i class="material-icons prefix">account_circle</i>
+        <input placeholder="Bitte Nachname eingeben" id="last_name" type="text" class="validate">
+        <label for="last_name">First Name</label>
+    </div>
+</div>
+<p id="Absatz1">
+    <button class="btn" id="WerteLesen">Werte auslesen</button>
+</p>
+
+<script>
+    $(function () {
+        console.log('Document ready');
+        setTimeout(InputSet, 2000); // zwei sekunde warten, dann funktion aufrufen
+
+        // Click - Event
+        $('#WerteLesen').click(function () {
+            // Funktion aufrufen
+            getValue();
+        });
+    });
+
+    function InputSet() {
+        // Wert setzten
+        $('#first_name').val('Cyrill');
+        $('#last_name').val('Schudel');
+        console.info('Werte wurde in das erste Feld geschrieben');
+        // class valid zu inputfeld hinzufügen
+        $("#first_name").addClass("valid");
+        // Prefilling Text Inputs (damit Labels nicht im Input Feld sind wenn kein placeholder vorhanden ist)
+        M.updateTextFields();
+    }
+    function getValue() {
+        // Wert lesen
+        var tmpVar1 = $('#first_name').val();
+        console.warn('Wert im Feld 1: ' + tmpVar1);
+        var tmpVar2 = $('#last_name').val();
+        console.warn('Wert im Feld 2: ' + tmpVar2);
+        $('body').append('<hr><p id="Absatz1"> Wert im Feld 1: ' + tmpVar1 + '<br>Wert im Feld 2: ' + tmpVar2 + '</p>');
+    }
+</script>
+
+
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmverwaltung</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!--Materialize muss zwischen JQuery und dem JS eingebunden werden-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <style>
+        /*gleiches Styling wie auch bei den anderen Text-Feldern*/
+    </style>
+    <h2 class="center">Text Inputs</h2>
+    <p id="Absatz1">
+        <a class="center" href="https://materializecss.com/text-inputs.html"
+            target="_blank">https://materializecss.com/text-inputs.html</a>;
+    </p>
+    <hr>
+
+    <!--Input mit Data Length limiatation-->
+    <h4 class="center">Input ohne Placeholder</h4>
+    <p class="center">Wert wird nach 2 Sekunden gesetzt.</p>
+    <div class="topmargin row">
+        <div class="input-field col s4 offset-s4">
+            <i class="material-icons prefix">child_care</i>
+            <input id="first_name" type="text" data-length="10">
+            <label for="first_name">Input text</label>
+        </div>
+    </div>
+    </div>
+    <!--Input mit Textarea Tag-->
+    <h4 class="center">Input mit Placeholder</h4>
+    <div class="topmargin row">
+        <div class="input-field col s4 offset-s4">
+            <i class="material-icons prefix">child_care</i>
+            <textarea id="last_name" class="materialize-textarea" data-length="120"></textarea>
+            <label for="last_name">Textarea</label>
+        </div>
+    </div>
+    <p id="Absatz1">
+        <button class="btn" id="WerteLesen">Werte auslesen</button>
+    </p>
+
+
+    <script>
+
+        $('input#first_name, textarea#last_name').characterCounter();
+
+        $('#WerteLesen').click(function (e) {
+            e.preventDefault();
+            getValues();
+        });
+
+        function getValues() {
+            var firstName = $('#first_name').val();
+            var lastName = $('#last_name').val();
+
+            if (firstName.length <= 10 && lastName.length <= 120) {
+                console.log(firstName + " :\n " + lastName);
+            }
+            else {
+                console.log('too long, you are so stupid');
+            }
+
+    
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
