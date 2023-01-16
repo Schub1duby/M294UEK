@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuerry https://cdnjs.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- Materialize CSS ->  https://materializecss.com/getting-started.html -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- handlebars von cdnjs.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+
+    <title>Tag 3 - Checkbox</title>
+</head>
+
+<body>
+    <!-- Farben der Felder -->
+    <style>
+        /* normal check to red */
+        [type="checkbox"]:checked+span:before,
+        [type="checkbox"]:checked+span:not(.lever):before,
+        [type="checkbox"].with-gap:checked+span:before {
+            border-right: 2px solid red;
+            border-bottom: 2px solid red;
+        }
+        /* Filled-in change color to red */
+        [type="checkbox"].filled-in:checked+span:not(.lever):after {
+            border: 2px solid red;
+            background-color: red;
+        }
+        .row .col.offset-s4 {
+            margin-left: 0;
+        }
+    </style>
+
+    <!-- HTML Code (korrekt erstellen können) -->
+    <div class="row">
+        <div class="input-field col s4 offset-s4">
+            <label>
+                <input type="checkbox" value="r" />
+                <span>Red</span>
+            </label>
+        </div>
+        <div class="input-field col s4 offset-s4">
+            <label>
+                <input type="checkbox" value="y" />
+                <span>Yellow</span>
+            </label>
+        </div>
+        <div class="input-field col s4 offset-s4">
+            <label>
+                <input type="checkbox" value="f" class="filled-in" />
+                <span>Filled in</span>
+            </label>
+        </div>
+        <div class="input-field col s4 offset-s4">
+            <label>
+                <input id="indeterminate-checkbox" value="i" type="checkbox" />
+                <span>Indeterminate Style</span>
+            </label>
+        </div>
+        <div class="input-field col s4 offset-s4">
+            <label>
+                <input type="checkbox" value="g" />
+                <span>Green</span>
+            </label>
+        </div>
+        <div class="input-field col s4 offset-s4">
+            <label>
+                <input type="checkbox" value="b" />
+                <span>Brown</span>
+            </label>
+        </div>
+    </div>
+
+
+    <button id="lesen">lesen</button>
+    <button id="setzen">setzen</button>
+
+    <!-- JS - Werte lesen und setzen -->
+    <script>
+        $('#lesen').click(function (e) {
+            e.preventDefault();
+
+            $('input:checkbox:checked').each(function () {
+                console.log($(this).val());
+            });
+        });
+
+        $('#setzen').click(function (e) {
+            e.preventDefault();
+
+            var check1 = "g";
+            var check2 = "f";
+            var check3 = "y"
+            $('input:checkbox').each(function() {
+                if ($(this).val() == check1 || $(this).val() == check2 || $(this).val() == check3) {
+                    $(this).prop("checked", true);
+                }
+            })
+
+        });
+    </script>
+
+</body>

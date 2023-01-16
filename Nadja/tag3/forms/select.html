@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuerry https://cdnjs.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- Materialize CSS ->  https://materializecss.com/getting-started.html -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- handlebars von cdnjs.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+
+    <title>Tag 3 - Select</title>
+</head>
+
+<body>
+    <!-- Farben der Felder -->
+    <style>
+        .dropdown-content li>span {
+            color: blue;
+        }
+
+        .select-wrapper input.select-dropdown:focus {
+            border-bottom: 1px solid blue;
+        }
+
+    </style>
+
+    <!-- HTML Code (korrekt erstellen können) -->
+    <div class="input-field col s12">
+        <select>
+            <option value="" disabled selected>Choose your option</option>
+            <option value="1">Max Muster</option>
+            <option value="2">Bruno Meier</option>
+            <option value="3">Bernhard Bianca</option>
+        </select>
+        <label>Choose a Name</label>
+    </div>
+
+    <button id="lesen">lesen</button>
+    <button id="setzen">setzen</button>
+
+    <!-- JS - Werte lesen und setzen -->
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+            
+            $('#lesen').click(function (e) { 
+                e.preventDefault();
+                
+                $('option:selected').each(function () {
+                console.log($(this).html());
+            })
+            });
+
+            $('#setzen').click(function (e) { 
+                e.preventDefault();
+
+                let selection = 2;
+
+                $('option').each(function () {
+                    if ($(this).val() == selection) {
+                        $(this).prop("selected", true);
+                        console.log($(this).html());
+                        $('select').formSelect();
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>

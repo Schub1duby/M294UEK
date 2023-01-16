@@ -2,7 +2,9 @@
 $.get("template/table.hbs", function (response) {
     var template = Handlebars.compile(response);
     // jqGetJson
-    $.getJSON("data/data.json", function (response) {
+    $.getJSON("api.php",
+    //$.getJSON("data/data.json", 
+    function (response) {
         // console.log(response);
         $('tbody').html(template(response));
 

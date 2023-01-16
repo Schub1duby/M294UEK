@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuerry https://cdnjs.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- Materialize CSS ->  https://materializecss.com/getting-started.html -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- handlebars von cdnjs.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+
+    <title>Tag 3 - Input Text</title>
+</head>
+
+<body>
+    <!-- Farben der Felder -->
+    <style>
+        input[type="text"]:not(.browser-default):focus:not([readonly]),
+        input.valid[type=text]:not(.browser-default), input.valid[type=text]:not(.browser-default) {
+            border-bottom: 1px solid red;
+            box-shadow: 0 1px 0 0 red;
+        }
+
+        input[type="text"]:not(.browser-default):focus:not([readonly])+label {
+            color: red;
+        }
+
+    </style>
+
+    <!-- HTML Code (korrekt erstellen können) -->
+    <div class="row">
+        <div class="input-field col s6">
+            <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="notes" type="text" class="validate">
+            <label for="notes">Notes</label>
+        </div>
+    </div>
+
+    <button id="lesen">lesen</button>
+    <button id="setzen">setzen</button>
+
+    <!-- JS - Werte lesen und setzen -->
+    <script>
+        $('#lesen').click(function (e) { 
+            e.preventDefault();
+            
+            $('input:text').each( function () {
+                console.log($(this).val());
+            })
+        });
+
+        $('#setzen').click(function (e) { 
+            e.preventDefault();
+
+            let first_name = "Max";
+            let last_name = "Meier";
+            let notes = "Mag lange Spaziergänge";
+
+            $('input:text#first_name').val(first_name);
+            $('input:text#last_name').val(last_name);
+            $('input:text#notes').val(notes);
+
+            $('label').addClass('active');
+        });
+
+    </script>
+
+</body>
