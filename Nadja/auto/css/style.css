@@ -2,6 +2,14 @@ li {
     display: flex;
 }
 
+.login {
+    margin-top: 10px !important;
+    position: absolute;
+    left: 10px;
+    height: 50px;
+    width: 50px;
+}
+
 .add {
     margin-top: 10px;
     position: absolute;
@@ -30,4 +38,8 @@ table {
     width: 100%;
     height: 35px;
     margin-top: 50px
+}
+
+.form-radio {
+    display: inline;
 }

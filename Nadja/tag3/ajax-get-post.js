@@ -28,7 +28,7 @@ $.ajax({
 
 // DELETE - ein Datensatz mit id
 $.ajax({
-    type: "DeLETE", // GET, POST, DELETE
+    type: "DELETE", // GET, POST, DELETE
     url: "api.php?id=" + id,
     dataType: "json",
     success: function (response) {

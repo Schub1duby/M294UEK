@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuerry https://cdnjs.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- Materialize CSS ->  https://materializecss.com/getting-started.html -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Tag 4 - Login</title>
+</head>
+
+<body>
+
+    <div id="loginform">
+        <h3>Loginform</h3>
+        <input type="text" name="name" id="name" value="admin">
+        <input type="password" name="password" id="password" value="1234">
+        <button id="login" class="btn">Login</button>
+    </div>
+
+    <div id="logout" class="btn">
+        Logout
+    </div>
+
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "api.php",
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                if (response.jwt.admin) {
+                    $('#logout').show();
+                    $('#loginform').hide();
+                } else {
+                    $('#loginform').show();
+                    $('#logout').hide();
+                }
+            }
+        });
+
+        $('#login').click(function (e) {
+            e.preventDefault();
+
+            var name = $('#name').val();
+            var password = $('#password').val();
+
+            $.ajax({
+                type: "LOGIN",
+                url: "api.php?username=" + name + "&password=" + password,
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                    if (response.jwt.admin) {
+                        $('#logout').show();
+                        $('#loginform').hide();
+                    } else {
+                        $('#loginform').show();
+                        $('#logout').hide();
+                    }
+                }
+            });
+        });
+
+        $('#logout').click(function (e) {
+            e.preventDefault();
+
+            $.ajax({
+                type: "LOGOUT",
+                url: "api.php",
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                    if (response.jwt.admin) {
+                        $('#logout').show();
+                        $('#loginform').hide();
+                    } else {
+                        $('#loginform').show();
+                        $('#logout').hide();
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

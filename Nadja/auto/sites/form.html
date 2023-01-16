@@ -2,17 +2,40 @@
     <form class="col s12">
         <div class="row">
             <div class="input-field col s6">
+                <input id="id" type="number" disabled>
+                <label class="active" for="id">Id</label>
+            </div>
+            <div class="input-field col s6">
                 <input id="name" type="text" class="validate">
                 <label for="name">Name</label>
             </div>
-            <div class="input-field col s6">
-                <label class="input-label">Kraftstoff</label>
-                <select class="input-pos">
-                    <option value="choose" disabled selected>Wählen sie den Kraftstoff</option>
-                    <option value="1">Diesel</option>
-                    <option value="2">Benzin</option>
-                    <option value="3">Elektro</option>
-                </select>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <div class="form-radio">
+                    <label>
+                        <input class="input-pos" value="Benzin" name="kraftstoff" type="radio" checked></input>
+                        <span>Benzin</span>
+                    </label>
+                </div>
+                <div class="form-radio">
+                    <label>
+                        <input class="input-pos" value="Diesel" name="kraftstoff" type="radio"></input>
+                        <span>Diesel</span>
+                    </label>
+                </div>
+                <div class="form-radio">
+                    <label>
+                        <input class="input-pos" value="Elektro" name="kraftstoff" type="radio"></input>
+                        <span>Elektro</span>
+                    </label>
+                </div>
+                <div class="form-radio">
+                    <label>
+                        <input class="input-pos" value="Hybrid" name="kraftstoff" type="radio"></input>
+                        <span>Hybrid</span>
+                    </label>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -21,8 +44,15 @@
                 <label for="farbe">Farbe</label>
             </div>
             <div class="input-field col s6">
-                <input id="bauart" type="text" class="validate">
-                <label for="bauart">Bauart</label>
+                <label class="input-label">Bauart</label>
+                <select class="input-pos">
+                    <option value="choose" disabled selected>Wählen sie die Bauart</option>
+                    <option value="Cabrio">Cabrio</option>
+                    <option value="Bus">Bus</option>
+                    <option value="PKW">PKW</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Pickup">Pickup</option>
+                </select>
             </div>
         </div>
         <div class="row">
@@ -30,9 +60,9 @@
                 <input id="tank" type="number" class="validate">
                 <label for="tank">Tank</label>
             </div>
-            <div class="input-field col s6">
-                <input id="baujahr" type="date" class="validate">
-                <label for="baujahr">Baujahr</label>
+            <div class="input-field pos col s6">
+                <label for="datePicker">Baujahr</label>
+                <input type="text" id="datePicker" class="datepicker">
             </div>
         </div>
     </form>
