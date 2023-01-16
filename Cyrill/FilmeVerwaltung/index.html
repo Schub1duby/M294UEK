@@ -43,8 +43,15 @@
     <li><a href="Moviepilot.de">Moviepilot</a></li>
   </ul>
 
-  <button href="#modal1" id="add" class="modal-trigger btn"> 
+  <button href="#modal1" id="add" class="modal-trigger btn btn-above black"> 
     <i class="large material-icons">add_circle_outline</i>
+  </button>
+
+  <button class="btn btn-above modal-trigger black" id="btn-login">
+    <i class="material-icons">face</i>
+  </button>
+  <button class="btn btn-above black" id="btn-logout">
+    logout
   </button>
 
   
@@ -53,17 +60,39 @@
 
   </main>
 
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4 id="modal-title">Error</h4>
-      <div id="modal-content">
+  <div id="modalLogin" class="modal">
+    <div class="modal-Login-content">
+      <h4 id="modal-Login-title">Error</h4>
+      <div id="modal-Login-content">
 
       </div>
     </div>
-    <div class="modal-footer">
+    <div class="modal-Insert-footer">
     </div>
   </div>
-  
+
+  <div id="modalInsert" class="modal">
+    <div class="modal-content">
+      <h4 id="modal-Insert-title">Error</h4>
+      <div id="modal-Insert-content">
+
+      </div>
+    </div>
+    <div class="modal-Insert-footer">
+    </div>
+  </div>
+
+  <div id="modalEdit" class="modal">
+    <div class="modal-content">
+      <h4 id="modal-Edit-title">Error</h4>
+      <div id="modal-Edit-content">
+
+      </div>
+    </div>
+    <div class="modal-Edit-footer">
+    </div>
+  </div>
+
 
 </body>
 

@@ -22,7 +22,7 @@ $.get("template/table.hbs",
                 $('.editMovie').click(function (e) {
                     e.preventDefault();
                     var id = $(this).parent().parent().attr('data-id');
-                    editMovie(id);
+                    getMovieForEdit(id);
                 });
 
                 $('.deleteMovie').click(function (e) {
@@ -58,7 +58,7 @@ $.get("template/table.hbs",
                     console.log(numberOfMoviesInFranchise);
                     numberOfMoviesInFranchise++;
                     console.log(numberOfMoviesInFranchise);
-                    
+
                     $.ajax({
                         type: "POST",
                         url: "api.php?id=" + id,
@@ -85,16 +85,61 @@ $.get("template/table.hbs",
                     });
                 }
 
-                function editMovie(id) {
+                function getMovieForEdit(id) {
                     console.log("edit: " + id);
-                    $('#modal-title').html("Datensatz mit Id: " + id);
-                    $('#modal-content').load("pages/form.html", function () {
-                        $.getScript('js/form.js');
+                    $('#modal-Edit-title').html("Datensatz mit Id: " + id);
+                    $('#modal-Edit-content').load("pages/formEdit.html", function () {
+                        $.getScript('js/formEdit.js');
                     });
 
-                    $('.modal').modal('open');
+                    $('#modalEdit').modal('open');
+
+                    $.ajax({
+                        type: "GET",
+                        url: "api.php?id=" + id,
+                        data: "data",
+                        dataType: "json",
+                        success: function (response) {
+                            console.log(response);
+                            editMovie(response);
+                        }
+                    });
 
 
+                }
+
+                function editMovie(response) {
+                    var id = response.data[0].id;
+                    var movieTitle = response.data[0].FilmTitel;
+                    var releaseDate = response.data[0].ReleaseYear;
+                    var regisseur = response.data[0].Regisseur;
+                    var genre = response.data[0].Genre;
+                    var numberOfMoviesInFranchise = response.data[0].NumberOfMoviesInFranchise;
+                    var fsk = response.data[0].FSK;
+
+                    $('#id').val(id);
+                    $('#id').focus();
+                    $('#id').prop( "disabled", true );
+                    $('#Film-Titel').val(movieTitle);
+                    $('#Film-Titel').focus();
+                    $('#release-date').val(releaseDate);
+                    $('#release-date').focus();
+                    $('#regisseur').val(regisseur);
+                    $('#regisseur').focus();
+                    $("option").each(function() {
+                        if($(this).val() == genre) {
+                          $(this).prop('selected', true);
+                          $('select').formSelect();            
+                        }   
+                    });  
+                    
+                   
+                    $('#count-movie').val(numberOfMoviesInFranchise);
+                    $('#count-movie').focus();
+                    $('#fsk').val(fsk);
+                    $('#fsk').focus();
+
+                    $('#')
 
                 }
 

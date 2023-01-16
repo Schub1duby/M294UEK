@@ -14,3 +14,17 @@ li{
     height: 35px;
     margin-top: 50px;
 }
+
+.btn-above{
+    display: flex;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.nav-wrapper{
+    background-color: black;
+}
+
+.btn{
+    background-color: black;
+}

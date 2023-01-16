@@ -1,15 +1,15 @@
 $('select').formSelect();
 $('.datepicker').datepicker();
 
-$('#save').click(function (e) {
+$('#insert-save').click(function (e) {
     e.preventDefault();
-    insertMovie(true);
+    insertMovie();
 
 });
 
 
 
-function insertMovie(newMovie) {
+function insertMovie() {
     var id = $('#id').val();
     var movieTitle = $('#Film-Titel').val();
     var releaseDate = $('#release-date').val();

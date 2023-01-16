@@ -1,5 +1,5 @@
 id;FilmTitel;ReleaseYear;Regisseur;Genre;NumberOfMoviesInFranchise;FSK;Bemerkung;Checkbutton
-1;Back To The Future;Dec 04, 1985;Robert Zemeckis;Science Fiction;3;blue;Bemerkung Test;checked
-2;Evil Dead 2;Jun 26, 1987;Sam Raimi;Horror;4;yellow;Bemerkung;checked
+1;Back To The Future;Dec 04, 1985;Robert Zemeckis;Science-Fiction;3;#000000;Bemerkung Test;checked
+2;Evil Dead 2;Jun 26, 1987;Sam Raimi;Horror;4;red;Bemerkung Test;checked
 3;Godfather;Feb 14, 1972;Francis Ford Coppola;Drama;3;blue;Bemerkung;checked
-4;Army of Darkness;Jan 03, 2023;Sam Raimi;Horror;4;#eb0f0f;Bemerkung Test;checked
+4;Army of Darknes;Jan 02, 2023;Sam Raimi;Horror;4;#ec1818;Bemerkung Test;checked
