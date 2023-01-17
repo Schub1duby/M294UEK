@@ -1,0 +1,64 @@
+<style>
+    /* ------------------------------------------------------------------------ Ihr CSS - Style - Code */
+
+        input[type=range]::-webkit-slider-thumb {
+            background-color: red;
+        }
+
+        input[type=range]::-moz-range-thumb {
+            background-color: red;
+        }
+
+        input[type=range]::-ms-thumb {
+            background-color: red;
+        }
+
+        /***** These are to edit the thumb and the text inside the thumb *****/
+        input[type=range]+.thumb {
+            background-color: #dedede;
+        }
+
+        input[type=range]+.thumb.active .value {
+            color: red;
+        }
+
+</style>
+
+<main>
+
+    <h3>
+        Aufgabe: FORM
+        <span class="right">2 Pkt.</span>
+    </h3>
+
+    <table>
+        <tr>
+            <td width="50%">
+                <h6>To Do:</h6>
+                <ol>
+                    <li>
+                        Auf der rechten Seite soll ein Materialize Range (für Noten) erstellt werden
+                    </li>
+                    <li>von 1 bis 6</li>
+                    <li>es sollen halbe und ganze Noten gewählt werden können</li>
+                    <li>die Farbe soll rot sein</li>
+                </ol>
+                <hr>
+                <a href="https://materializecss.com/range.html" target="_blank">https://materializecss.com/range.html</a>
+            </td>
+            <td class="center">
+                <h6 class="red lighten-4">Ihre Lösung:</h6>
+                <!-- ------------------------------------------------------------------------ Ihr HTML - Code -->
+                <form action="#">
+                    <p class="range-field">
+                        <input type="range" id="test5" min="1" max="6" step="0.5" />
+                    </p>
+                  </form>
+            </td>
+        </tr>
+    </table>
+</main>
+
+<script>
+    /* ------------------------------------------------------------------------ Ihr JS - Code */
+</script>
