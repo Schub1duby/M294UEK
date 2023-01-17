@@ -1,0 +1,53 @@
+<style>
+    /* ------------------------------------------------------------------------ Ihr CSS - Style - Code */
+</style>
+
+<main>
+
+    <h3>
+        Aufgabe: MODAL
+        <span class="right">1 Pkt.</span>
+    </h3>
+
+    <table>
+        <tr>
+            <td width="50%">
+                <h6>To Do:</h6>
+                <ol>
+                    <li>Wird der Button geklickt, soll das Modal geöffnet werden</li>
+                    <li>der HTML - Code darf nicht verändert werden</li>
+                </ol>
+                <hr>
+                <a href="https://materializecss.com/modals.html"
+                    target="_blank">https://materializecss.com/modals.html</a>
+
+            </td>
+            <td class="center">
+                <h6 class="red lighten-4">Ihre Lösung:</h6>
+                <!-- ------------------------------------------------------------------------ Ihr HTML - Code -->
+                <button id="ModButton">Modal open</button>
+                <!-- Modal Structure -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <h4>Modal Header</h4>
+                        <p>A bunch of text</p>
+                    </div>
+                </div>
+
+            </td>
+        </tr>
+    </table>
+</main>
+
+<script>
+    /* ------------------------------------------------------------------------ Ihr JS - Code */
+    $(document).ready(function () {
+        $('.modal').modal();
+
+        $('#ModButton').click(function (e) { 
+            e.preventDefault();
+            
+            $('.modal').modal('open');
+        });
+    });
+</script>
