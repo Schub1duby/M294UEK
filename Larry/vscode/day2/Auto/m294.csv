@@ -1,3 +1,3 @@
-id;name;treibstoff;farbe;bauart;Inverkehrssetzung;tank;beschreibung;
-1;Opel;Diesel;blue;SUV;1.5.2000;0;Beschreibung 01
-2;VW;Benzin;yellow;PKW;7.6.2017;0;Beschreibung 02
+id;name;treibstoff;farbe;bauart;inverkehrssetzung;beschreibung;tank
+1;Opel;Diesel;blue;SUV;1.5.2000;Beschreibung 01;6
+2;VW;Benzin;yellow;PKW;7.6.2017;Beschreibung 02;2

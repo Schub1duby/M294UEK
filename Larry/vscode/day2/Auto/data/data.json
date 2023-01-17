@@ -2,7 +2,7 @@
     "data":[
         {
             "id": 1,
-            "name": "Passat",
+            "carName": "Passat",
             "treibstoff": "Diesel",
             "farbe": "0000FF",
             "bauart": "Limousine",
@@ -10,7 +10,7 @@
         },
         {
             "id": 2,
-            "name": "Opel",
+            "carName": "Opel",
             "treibstoff": "Benzin",
             "farbe": "00FF00",
             "bauart": "SUV",
@@ -18,7 +18,7 @@
         },
         {
             "id": 3,
-            "name": "VW",
+            "carName": "VW",
             "treibstoff": "Elektro",
             "farbe": "FF0000",
             "bauart": "Pickup",
