@@ -1,0 +1,467 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 5px;
+    background-color: #eaeff7;
+    border-bottom: 1px solid #d0d7e3;
+}
+
+h1 {
+    font-size: 1.8rem;
+    background-color: #4d668f;
+    border-bottom: 1px solid #000000;
+    color: white;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin: 0rem 0 1rem 0;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+h6 {
+    font-size: 1.1rem;
+}
+
+p {
+    padding: 10px;
+}
+
+tr {
+    border-bottom: 0px;
+}
+
+td {
+    vertical-align: top;
+}
+
+ol {
+    counter-reset: item;
+}
+
+ol>li {
+    counter-increment: item;
+}
+
+ol ol>li {
+    display: block;
+}
+
+ol ol>li:before {
+    content: counters(item, ".") ". ";
+    margin-left: -20px;
+}
+
+.readtext {
+    background-color: #ffece0;
+    padding: 10px;
+}
+
+.middle {
+    vertical-align: middle;
+}
+
+
+body {
+    padding: 20px;
+}
+
+header {
+    font-size: 2.2rem;
+    background-color: #4d668f;
+    border-bottom: 1px solid #000000;
+    color: white;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.site {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "nav main";
+}
+
+.nav {
+    grid-area: nav;
+    padding-right: 5px;
+    border-right: 1px solid gray;
+    margin-right: 5px;
+}
+
+.nav hr {
+    margin: 1px;
+    padding: 0px;
+}
+
+.main {
+    grid-area: main;
+}
+
+.main img {
+    max-width: 100%;
+}
+
+.main h5 {
+    margin: 0px;
+}
+
+.main ul li :not(.main .input-field) {
+    list-style-type: initial !important;
+    padding-left: 0px !important;
+    margin-left: 40px !important;
+}
+
+.main hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right,
+            rgb(234 239 247),
+            rgb(77 102 143),
+            rgb(234 239 247));
+}
+
+main>table>tbody>tr>td {
+    border-right: 1px solid #ccc;
+}
+
+main>table>tr>td:last-child::before {
+    content: "Ihr HTML - Code:";
+}
+
+.shadow {
+    -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.61);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.61);
+}
+
+.nav>a {
+    padding: 5px;
+}
+
+.active {
+    color: black;
+    font-style: oblique;
+    font-weight: 700;
+}
+
+.large {
+    font-size: 6rem !important;
+}
+
+.medium {
+    font-size: 6rem !important;
+}
+
+.list-initial li {
+    list-style-type: initial !important;
+    margin-left: 40px !important;
+}
+
+.list-circle li {
+    list-style-type: circle !important;
+    margin-left: 40px !important;
+}
+
+.list-square li {
+    list-style-type: square !important;
+    margin-left: 40px !important;
+}
+
+.list-disc li {
+    list-style-type: disc !important;
+    margin-left: 40px !important;
+}
+
+.list-none li {
+    list-style-type: none !important;
+    margin-left: 0px !important;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/*DISPLAY*/
+.display-none {
+    display: none;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.display-block {
+    display: block;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+/*WIDTH*/
+.w10 {
+    width: 10%;
+}
+
+.w20 {
+    width: 20%;
+}
+
+.w30 {
+    width: 30%;
+}
+
+.w40 {
+    width: 40%;
+}
+
+.w50 {
+    width: 50%;
+}
+
+.w60 {
+    width: 60%;
+}
+
+.w70 {
+    width: 70%;
+}
+
+.w80 {
+    width: 80%;
+}
+
+.w90 {
+    width: 90%;
+}
+
+.w100 {
+    width: 100%;
+}
+
+/*CENTER wenn Breite width definiert ist*/
+.center {
+    margin: auto;
+}
+
+/*HOEHE*/
+.h10 {
+    height: 10%;
+}
+
+.h20 {
+    height: 20%;
+}
+
+.h30 {
+    height: 30%;
+}
+
+.h40 {
+    height: 40%;
+}
+
+.h50 {
+    height: 50%;
+}
+
+.h60 {
+    height: 60%;
+}
+
+.h70 {
+    height: 70%;
+}
+
+.h80 {
+    height: 80%;
+}
+
+.h90 {
+    height: 90%;
+}
+
+.h100 {
+    height: 100%;
+}
+
+/*PADDING: Abstand innen*/
+.pa5 {
+    padding: 5px;
+}
+
+.pa10 {
+    padding: 10px;
+}
+
+.pa15 {
+    padding: 15px;
+}
+
+.pa20 {
+    padding: 20px;
+}
+
+.pa25 {
+    padding: 25px;
+}
+
+.pa30 {
+    padding: 30px;
+}
+
+.pa10-top {
+    padding-top: 10px;
+}
+
+.pa10-left {
+    padding-left: 10px;
+}
+
+.pa10-bottom {
+    padding-bottom: 10px;
+}
+
+.pa10-right {
+    padding-right: 10px;
+}
+
+/*MARGIN: Abstand Aussen*/
+.ma5 {
+    margin: 5px;
+}
+
+.ma10 {
+    margin: 10px;
+}
+
+.ma15 {
+    margin: 15px;
+}
+
+.ma20 {
+    margin: 20px;
+}
+
+.ma25 {
+    margin: 25px;
+}
+
+.ma30 {
+    margin: 30px;
+}
+
+.ma10-top {
+    margin-top: 10px;
+}
+
+.ma10-left {
+    margin-left: 10px;
+}
+
+.ma10-bottom {
+    margin-bottom: 10px;
+}
+
+.ma10-right {
+    margin-right: 10px;
+}
+
+/*TEXT - FORMATIERUNGEN*/
+.text-fett {
+    font-weight: bold;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-none {
+    text-decoration: none;
+}
+
+.text-overline {
+    text-decoration: overline;
+}
+
+.text-underline {
+    text-decoration: underline;
+}
+
+.text-line-through {
+    text-decoration: line-through;
+}
+
+/*RAHMEN - FORMATIERUNGEN*/
+.border-1 {
+    border: 1px;
+}
+
+.border-2 {
+    border: 2px;
+}
+
+.border-3 {
+    border: 3px;
+}
+
+.border-4 {
+    border: 4px;
+}
+
+.border-5 {
+    border: 5px;
+}
+
+/*RAHMEN - LINIEN*/
+.border-solid {
+    border-style: solid;
+}
+
+.border-dotted {
+    border-style: dotted;
+}
+
+.border-none {
+    border-style: none;
+}

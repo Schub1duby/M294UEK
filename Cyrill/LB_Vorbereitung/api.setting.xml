@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+<CRUD>
+<LoginRequired>false</LoginRequired>
+</CRUD>
+<JWT>
+<JWT_Enabled>false</JWT_Enabled>
+<JWT_METHODES>HEAD,PUT,PATCH,OPTIONS,GET,POST,DELETE,LOGIN,LOGOUT</JWT_METHODES>
+<JWT_URL>http://localhost</JWT_URL>
+<token>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTE1MTQzMTEsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdCIsImlhdCI6MTY1MTUxNDI1MX0.ZB7tW4by6PqVrgwvtfJXq6DS27mqD7xf7tBkfxB0RfQ</token>
+</JWT>
+</settings>

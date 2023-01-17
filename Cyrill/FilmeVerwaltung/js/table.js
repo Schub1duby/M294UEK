@@ -8,7 +8,7 @@ $.get("template/table.hbs",
         $.getJSON("api.php",
             function (response) {
                 // console.log(response);
-                //Lade das Template in die Tabelle hinein und fülle es mit den Daten ab
+                //Lade das Template in die Tabelle hinein und füllt es mit den Daten ab
                 $('tbody').html(template(response))
 
                 //Wichtig ist, dass Event Listener genau in die gleiche Funktion gleich weiter unten hinzugefügt werden
