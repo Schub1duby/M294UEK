@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmverwaltung</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!--Materialize muss zwischen JQuery und dem JS eingebunden werden-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <style>
+        .topmargin {
+            margin-top: 30px;
+        }
+
+        [type="checkbox"]:checked+span:before,
+        [type="checkbox"]:checked+span:not(.lever):before,
+        [type="checkbox"].with-gap:checked+span:before {
+            border-right: 2px solid red;
+            border-bottom: 2px solid red;
+        }
+
+        /*Text formatieren, welche gecheckt wurden*/
+        [type="checkbox"]:checked+span{
+          color: blue;
+          margin-left: 5px;
+        }
+
+        #Absatz1 {
+            text-align: center;
+        }
+    </style>
+    <h2 class="center">Checkboxes</h2>
+    <p id="Absatz1">
+        <a class="center" href="https://materializecss.com/checkboxes.html"
+            target="_blank">https://materializecss.com/checkboxes.html</a>;
+    </p>
+    <hr>
+
+    <h3 class="center">HTML checked</h3>
+    <p class="center">Per JS wird nach 2 Sekunden Yellow gesetzt.</p>
+    <div class="topmargin row">
+        <div class="input-field col s4 offset-s4">
+            <label>
+                <input id="checkbox1" name="checkbox1" value="r" type="checkbox" checked />
+                <span>Red</span>
+            </label>
+        </div>
+        <div class="input-field col s4 offset-s4">
+            <label>
+                <input id="checkbox2" name="checkbox2" value="y" type="checkbox" />
+                <span>Yellow</span>
+            </label>
+        </div>
+        <div class="input-field col s4 offset-s4">
+            <label>
+                <input id="checkbox3" name="checkbox3" value="g" type="checkbox" class="with-gap" />
+                <span>Green</span>
+            </label>
+        </div>
+        <div class="input-field col s4 offset-s4">
+            <label>
+                <input id="checkbox4" name="checkbox4" value="b" type="checkbox" disabled="disabled" />
+                <span>Brown</span>
+            </label>
+        </div>
+    </div>
+
+    <p id="Absatz1">
+        <button class="btn" id="WerteLesen">Werte auslesen</button>
+    </p>
+
+    <script>
+        $(function () {
+
+            setTimeout(setRadio, 2000); // zwei sekunden warten, dann funktion aufrufen
+
+            // Click - Event
+            $('#WerteLesen').click(function () {
+                // Funktion aufrufen
+                getValue();
+            });
+        });
+        function setRadio() {
+            // Wert setzten
+            var myvar = 1;
+            if (myvar == 1) {
+                $('#checkbox2').prop("checked", true);
+            }
+        }
+        function getValue() {
+            // Wert lesen
+            var i = 1;
+            $('body').append('<hr><p id="Absatz1">');
+            $("input:checkbox").each(function () {
+                if ($(this).prop('checked')) {
+                    console.log("Checkbox " + i + " = 1");
+                    $('body').append("Checkbox " + i + " = 1");
+
+                } else {
+                    console.log("Checkbox " + i + " = 0");
+                    $('body').append("Checkbox " + i + " = 0");
+                }
+                $('body').append("<br>");
+                i++;
+            });
+            $('body').append('</p>');
+        }
+    </script>
+</body>
+
+</html>

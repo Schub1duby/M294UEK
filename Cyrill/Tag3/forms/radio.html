@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmverwaltung</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!--Materialize muss zwischen JQuery und dem JS eingebunden werden-->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+</head>
+
+<body>
+  <style>
+     .topmargin {
+          margin-top: 30px;
+        }
+
+
+        [type="radio"]:checked+span:after,
+        [type="radio"].with-gap:checked+span:before,
+        [type="radio"].with-gap:checked+span:after {
+            border: 2px solid red;
+        }
+
+        /*Text formatieren, welcher gerade angewählt ist mit dem Radio Button*/
+        [type="radio"]:checked+span{
+          color: blue;
+          margin-left: 5px;
+        }
+
+        /*Für Button mit der Klassem With-Gap*/
+        [type="radio"]:checked+span:after,
+        [type="radio"].with-gap:checked+span:after {
+            background-color: red;
+            color: red;
+        }
+
+        #Absatz1 {
+            text-align: center;
+        }
+  </style>
+
+  <h2 class="center">RADIO - Buttons</h2>
+  <p id="Absatz1">
+    <a class="center" href="https://materializecss.com/radio-buttons.html"
+      target="_blank">https://materializecss.com/radio-buttons.html</a>;
+  </p>
+  <hr>
+
+  <h3 class="center">Button mit HTML checked</h3>
+  <p class="center">Per JS wird nach 2 Sekunden ein anderer gesetzt.</p>
+  <div class="topmargin row">
+    <div class="input-field col s4 offset-s4">
+      <label>
+        <input name="group1" value="r" type="radio" checked />
+        <span>Red</span>
+      </label>
+    </div>
+    <div class="input-field col s4 offset-s4">
+      <label>
+        <input name="group1" value="y" type="radio" />
+        <span>Yellow</span>
+      </label>
+    </div>
+    <div class="input-field col s4 offset-s4">
+      <label>
+        <input name="group1" value="g" type="radio" class="with-gap" />
+        <!--With Gap Klasse beachten, welche das Aussehen ein bisschen verändert-->
+        <span>Green</span>
+      </label>
+    </div>
+    <div class="input-field col s4 offset-s4">
+      <label>
+        <input name="group1" value="b" type="radio" disabled="disabled" />
+        <span>Brown</span>
+      </label>
+    </div>
+  </div>
+
+  <button id="WerteLesen">Werte Lesen</button>
+
+  <script>
+    // JQuery - Document ready
+    $(function () {
+
+      setTimeout(setRadio, 2000); // zwei sekunden warten, dann funktion aufrufen
+
+      // Click - Event
+      $('#WerteLesen').click(function () {
+        // Funktion aufrufen
+        getValue();
+      });
+    });
+
+    function setRadio() {
+      // Wert setzten
+      $("input:radio").each(function () {
+        if ($(this).val() == "y") {
+          $(this).attr('checked', 'checked');
+        }
+      });
+
+    }
+
+    function getValue() {
+      // Wert lesen
+      $("input:radio").each(function () {
+        if ($(this).prop('checked')) {
+          console.log("Vaule = " + $(this).val());
+          $('body').append('Value = '+$(this).val() + ' / ');
+        }
+      });
+    }
+
+  </script>
+
+</body>
+
+</html>

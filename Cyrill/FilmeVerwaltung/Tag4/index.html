@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmverwaltung</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!--Materialize muss zwischen JQuery und dem JS eingebunden werden-->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+  <script src="./index.js" defer></script>
+
+
+</head>
+
+<body>
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="input_text" type="text" data-length="10" maxlength="10">
+          <label for="input_text">Input text</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="input_zahl" type="number" min="0" max="6" step="0.1" value="5">
+          <label for="input_zahl">Input text</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+          <label for="textarea2">Textarea</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    $('input#input_text, textarea#textarea2').characterCounter();
+
+    $('#input_text').keyup(function (e) {
+      e.preventDefault();
+      var input = $(this).val();
+      console.log(input);
+      if (input.indexOf('<') >= 0) {
+        M.toast({ html: 'unerlaubte Sonderzeichen' });
+        $(this).addClass('red');
+      }
+      else {
+        $(this).removeClass('red');
+      }
+    });
+
+
+    $('#input_zahl').change(function (e) {
+      e.preventDefault();
+
+      var input = $(this).val();
+      console.log(input);
+
+      var round = Math.round(input*2)/2;
+      console.log(round);
+      $(this).val(round);
+
+
+      if(input > 6){
+        M.toast({html: 'zu grosse Zahl'});
+        $('#input_zahl').val(5);
+      }
+      if(input < 1){
+        M.toast({html: 'kleine Zahl'})
+        $('#input_zahl').val(5);
+      }
+
+    });
+
+
+  </script>
+</body>
+
+</html>

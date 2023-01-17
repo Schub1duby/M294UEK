@@ -1,3 +1,7 @@
-id;name;kraftstoff;farbe;bauart;tanken;date;bemerkung;status
-1;Opel;Diesel;blue;SUV;4;1.5.2000;Beschreibung 01;checked
-2;VW;Benzin;yellow;PKW;7;7.6.2017;Beschreibung 02;
+id;name;kraftstoff;farbe;bauart;tanken;datum
+1;Opel;Benzin;#ff0000;Bus;8;01/12/2022
+2;VW;Benzin;#000000;Cabrio;7;07/06/2017
+3;Audi;Hybrid;#ffaf00;SUV;12;01/01/2023
+4;Porsche;Elektro;#9900ff;Cabrio;202;06/02/2022
+5;Lamborghini;Benzin;#ffff00;PKW;30;06/06/2017
+6;Mercedes;Hybrid;#ff00af;2021;43;14/07/2021

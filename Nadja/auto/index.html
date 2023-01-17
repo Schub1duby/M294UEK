@@ -57,8 +57,16 @@
             <a class="red-text" href="https://ict-berufsbildung.info/">MOODLE</a></li>
     </ul>
 
+    <button href="#modal" id="login" class="modal-trigger btn login">
+        <i class="login-icon material-icons">login</i>
+    </button>
+
+    <button id="logout" class="btn login">
+        <i class="login-icon material-icons">logout</i>
+    </button>
+
     <!-- modal trigger -->
-    <button href="#modal1" class="modal-trigger btn add red white-text">
+    <button href="#modal" class="modal-trigger btn add red white-text">
         <i class="icon material-icons">add</i>
     </button>
 
@@ -66,16 +74,16 @@
 
     </main>
 
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4 id="modalTitle"></h4>
-            <p id="modalContent"></p>
+        <!-- Modal Structure für hinzufügen und editieren -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <h4 id="modalTitle"></h4>
+                <p id="modalContent"></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn">Speichern</a>
+            </div>
         </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn">Save</a>
-        </div>
-    </div>
 
 
 </body>

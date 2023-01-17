@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- jQuerry https://cdnjs.com/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <!-- Materialize CSS ->  https://materializecss.com/getting-started.html -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>Tag 4 - Input Validation</title>
+</head>
+<body>
+    
+    <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="input_text" type="text" data-length="10" maxlength="10">
+              <label for="input_text">Input Text</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="input_zahl" type="number" min="1" max="6" step="0.5" value="4">
+              <label for="input_zahl">Input Zahl</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+              <label for="textarea2">Textarea</label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <script>
+        $('input#input_text, textarea#textarea2').characterCounter();
+
+        $('#input_text').keyup(function(e) {
+            e.preventDefault();
+            var input = $(this).val();
+            console.log(input);
+            if (input.indexOf('<') >= 0) {
+                M.toast({html: 'Unerlaubtes Zeichen'});
+                $(this).addClass('red');
+            } else {
+                $(this).removeClass('red');
+            }
+        });
+
+        // oder .focusout()
+        $('#input_zahl').change(function(e) {
+            e.preventDefault();
+            var input = $(this).val();
+            var round = Math.round(input*2)/2;
+            $(this).val(round);
+            if ( round > 6 ) {
+                M.toast({html: 'Wert zu gross'});
+                $(this).val(6);
+            } else if (round < 1) {
+                M.toast({html: 'Wert zu klein'});
+                $(this).val(1);
+            }
+            else {
+                $(this).removeClass('red');
+            }
+        });
+      </script>
+
+</body>
+</html>

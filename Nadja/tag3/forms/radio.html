@@ -2,93 +2,93 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- jQuerry https://cdnjs.com/ -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!-- jQuerry https://cdnjs.com/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
-    <!-- Materialize CSS ->  https://materializecss.com/getting-started.html -->
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Materialize CSS ->  https://materializecss.com/getting-started.html -->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- handlebars von cdnjs.com -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+  <!-- handlebars von cdnjs.com -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
 
 
 
-    <title>Tag 3 - Radio Buttons</title>
+  <title>Tag 3 - Radio Buttons</title>
 </head>
 
 <body>
-    <!-- Farben der Felder -->
-    <style>
-        [type="radio"]:checked+span::after,
-        [type="radio"].with-gap:checked+span::after {
-            background-color: red;
-            border: 1px solid red;
+  <!-- Farben der Felder -->
+  <style>
+    [type="radio"]:checked+span::after,
+    [type="radio"].with-gap:checked+span::after {
+      background-color: red;
+      border: 1px solid red;
+    }
+
+    [type="radio"].with-gap:checked+span::before {
+      border: 2px solid red;
+    }
+  </style>
+
+  <!-- HTML Code (korrekt erstellen können) -->
+  <p>
+    <label>
+      <input name="group1" value="r" type="radio" checked />
+      <span>Red</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input name="group1" value="y" type="radio" />
+      <span>Yellow</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input class="with-gap" value="g" name="group1" type="radio" />
+      <span>Green</span>
+    </label>
+  </p>
+  <p>
+    <label>
+      <input name="group1" value="b" type="radio" disabled="disabled" />
+      <span>Brown</span>
+    </label>
+  </p>
+
+  <button id="lesen">lesen</button>
+  <button id="setzen">setzen</button>
+
+  <!-- JS - Werte lesen und setzen -->
+  <script>
+    $('#lesen').click(function (e) {
+      e.preventDefault();
+
+      $('input:radio[name=group1]:checked').each(function () {
+        console.log($(this).val());
+      })
+
+    });
+    $('#setzen').click(function (e) {
+      e.preventDefault();
+
+      var radio = "g"
+      $('input:radio[name=group1]').each(function () {
+        if ($(this).val() == radio) {
+          $(this).prop("checked", true);
         }
-        [type="radio"].with-gap:checked+span::before {
-            border: 2px solid red;
-        }
+      })
 
-    </style>
-
-    <!-- HTML Code (korrekt erstellen können) -->
-    <p>
-        <label>
-          <input name="group1" value="r" type="radio" checked />
-          <span>Red</span>
-        </label>
-      </p>
-      <p>
-        <label>
-          <input name="group1" value="y" type="radio" />
-          <span>Yellow</span>
-        </label>
-      </p>
-      <p>
-        <label>
-          <input class="with-gap" value="g" name="group1" type="radio"  />
-          <span>Green</span>
-        </label>
-      </p>
-      <p>
-        <label>
-          <input name="group1" value="b" type="radio" disabled="disabled" />
-          <span>Brown</span>
-        </label>
-      </p>
-
-      <button id="lesen">lesen</button>
-      <button id="setzen">setzen</button>
-
-    <!-- JS - Werte lesen und setzen -->
-    <script>
-        $('#lesen').click(function (e) { 
-            e.preventDefault();
-
-            $('input:radio[name=group1]:checked').each(function () {
-                console.log($(this).val());
-            })
-            
-        });
-        $('#setzen').click(function (e) { 
-            e.preventDefault();
-
-            var radio = "g"
-            $('input:radio[name=group1]').each(function() {
-                if ($(this).val() == radio) {
-                    $(this).prop("checked", true);
-                }
-            })
-            
-        });
-    </script>
+    });
+  </script>
 
 </body>

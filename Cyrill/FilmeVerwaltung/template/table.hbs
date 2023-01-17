@@ -1,17 +1,23 @@
-{{#each filme}}
+{{#each data}}
 
 <tr data-id={{id}}>
-        <td>{{id}}</td>
-        <td>{{FilmTitel}}</td>
-        <td>{{ReleaseDate}}</td>
-        <td>{{Regisseur}}</td>
-        <td>{{Genre}}</td>
-        <td>{{NumberFranchise}}</td>
-        <td>
-          <i class="small material-icons addNewPartOfFranchise btn">note_add</i>
-          <i class="small material-icons editMovie btn">edit</i>
-          <i class="small material-icons deleteMovie btn">delete</i>
-        </td>
-      </tr>
+  <td>{{id}}</td>
+  <td>{{FilmTitel}}</td>
+  <td>{{ReleaseYear}}</td>
+  <td>{{Regisseur}}</td>
+  <td>{{Genre}}</td>
+  <td>{{NumberOfMoviesInFranchise}}</td>
+  <td>
+    <div style="background-color: {{FSK}}; height: 30px; width:50px;">
+        
+    </div>
+    {{FSK}}
+  </td>
+  <td class="table-action">
+    <i class="small material-icons addNewPartOfFranchise btn black">note_add</i>
+    <i class="small material-icons editMovie btn black">edit</i>
+    <i class="small material-icons deleteMovie btn black">delete</i>
+  </td>
+</tr>
 
 {{/each}}

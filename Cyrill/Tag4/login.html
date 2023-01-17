@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmverwaltung</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!--Materialize muss zwischen JQuery und dem JS eingebunden werden-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <div id="loginform">
+        <h3>Loginform</h3>
+        <input type="text" name="username" id="username" value="admin">
+        <input type="password" name="password" id="password" value="1234">
+        <button class="btn" id="login">login</button>
+    </div>
+
+    <div id="logout">
+        <button id="logout" class="btn">logout</button>
+
+    </div>
+
+    <script>
+
+        //Überprüft, ob man schon eingeloggt ist und zeigt je nachdem gewisse Button an
+        $.ajax({
+            type: "GET",
+            url: "api.php",
+            dataType: "json",
+            success: function (response) {
+                console.log(response);
+                if (response.jwt.admin) {
+                    $('#logout').show();
+                    $('#loginform').hide();
+                } else {
+                    $('#loginform').show();
+                    $('#logout').hide();
+                }
+            }
+        });
+
+
+        $('#login').click(function (e) {
+            e.preventDefault();
+            var username = $('#username').val();
+            var password = $('#password').val();
+            $.ajax({
+                type: "LOGIN",
+                url: "api.php?username=" + username + "&password=" + password,
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                    if (response.jwt.admin) {
+                        $('#logout').show();
+                        $('#loginform').hide();
+                    } else {
+                        $('#loginform').show();
+                        $('#logout').hide();
+                    }
+                }
+            });
+        });
+
+        $('#btn-logout').click(function (e) {
+            e.preventDefault();
+            console.log('logout');
+            $.ajax({
+                type: "LOGOUT",
+                url: "api.php",
+                dataType: "json",
+                success: function (response) {
+                    console.log(response);
+                    if (response.jwt.admin) {
+                        $('#logout').show();
+                        $('#loginform').hide();
+                    } else {
+                        $('#loginform').show();
+                        $('#logout').hide();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

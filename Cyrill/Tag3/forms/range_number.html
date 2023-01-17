@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmverwaltung</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!--Materialize muss zwischen JQuery und dem JS eingebunden werden-->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+</head>
+
+<body>
+    <h2 class="center">Text Inputs</h2>
+    <p id="Absatz1">
+        <a class="center" href="https://materializecss.com/text-inputs.html"
+            target="_blank">https://materializecss.com/text-inputs.html</a>;
+    </p>
+    <hr>
+
+    <!--Input ohne Placeholder-->
+    <h4 class="center">Number Range Feld</h4>
+    <div class="topmargin row">
+        <label for="tentacles">Number of tentacles (10-100):</label>
+
+        <input type="number" id="tentacles" name="tentacles" min="10" max="100">
+    </div>
+
+    <p id="Absatz1">
+        <button class="btn" id="WerteLesen">Werte auslesen</button>
+    </p>
+
+</body>
+
+</html>

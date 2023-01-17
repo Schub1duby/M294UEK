@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmverwaltung</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!--Materialize muss zwischen JQuery und dem JS eingebunden werden-->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+</head>
+<body>
+
+    <style>
+        .topmargin {
+            margin-top: 30px;
+        }
+
+        /* Input Feld - underline color bei focus */
+        .input-field input[type=text]:focus {
+            border-bottom: 2px solid red !important;
+            -webkit-box-shadow: 0 2px 0 0 red !important;
+            -moz-box-shadow: 0 2px 0 0 red !important;
+            box-shadow: 0 2px 0 0 red !important;
+        }
+        
+        /*Elemente im Option ansteuern*/
+        .dropdown-content li>a,
+        .dropdown-content li>span {
+            color: blue;
+        }
+        
+        /*Falls über eine Option gehovert wird*/
+        .dropdown-content li>a:hover,
+        .dropdown-content li>span:hover {
+            color: white;
+            background-color: blue;
+        }
+
+
+        #Absatz1 {
+            text-align: center;
+        }
+
+        select option{
+            color: red;
+        }
+   
+    </style>
+</body>
+<h2 class="center">Select</h2> 
+    <p id="Absatz1"> 
+        <a class="center" href="https://materializecss.com/select.html" 
+            target="_blank">https://materializecss.com/select.html</a>; 
+    </p> 
+    <hr> 
+ 
+    <h3 class="center">Select mit HTML selected</h3> 
+    <div class="topmargin row"> 
+        <div class="input-field col s4 offset-s4"> 
+            <select id="select1"> 
+                <option value="" disabled selected>Choose your option</option> 
+                <option value="1">Option 1</option> 
+                <option value="2">Option 2</option> 
+                <option value="3">Option 3</option> 
+            </select> 
+            <label>Materialize Select</label> 
+        </div> 
+    </div> 
+ 
+    <h3 class="center">Select mit JS selected</h3> 
+    <p class="center">Wert wird nach 2 Sekunden gesetzt.</p> 
+    <div class="topmargin row"> 
+        <div class="input-field col s4 offset-s4"> 
+            <select id="select2"> 
+                <option value="r">Rot</option> 
+                <option value="g">Grün</option> 
+                <option value="b">Blau</option> 
+            </select> 
+            <label>Materialize Select</label> 
+        </div> 
+    </div> 
+    <p id="Absatz1"> 
+        <button class="btn" id="WerteLesen">Werte auslesen</button> 
+    </p>
+
+
+    <script>
+        $(function () {
+            // Initialization der select
+            $('select').formSelect();
+
+            setTimeout(InputSet, 2000); // zwei sekunden warten, dann funktion aufrufen
+
+            // Click - Event
+            $('#WerteLesen').click(function () {
+                // Funktion aufrufen
+                getValue();
+            });
+        });
+
+        //Inititalisiert und setzt Default Werte in den Dropdowns
+        function InputSet() {
+            // Wert setzten
+            $('#select1').val("1");
+            $('#select2').val('g');
+            $('select').formSelect();
+            console.info('Select aktualisiert');
+        }
+
+        //List die Values aus und gibt sie in die Console aus
+        function getValue() {
+            // Wert lesen
+            var tmpVar1 = $('#select1').val();
+            console.warn('Wert im select 1: ' + tmpVar1);
+            var tmpVar2 = $('#select2').val();
+            console.warn('Wert im select 2: ' + tmpVar2);
+            $('body').append( tmpVar1 + ' / ' + tmpVar2);
+        }
+    </script>
+</html>

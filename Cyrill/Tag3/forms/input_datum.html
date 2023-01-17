@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmverwaltung</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <!--Materialize muss zwischen JQuery und dem JS eingebunden werden-->
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+
+
+</head>
+<body>
+
+    <style>
+        
+        .topmargin {
+            margin-top: 30px;
+        }
+
+        #Absatz1 {
+            text-align: center;
+        }
+
+        /*Hintergrundfarbe des grossen Feldes Links*/
+        .datepicker-date-display {
+            background-color: orange;
+        }
+
+        /*Ausgewähltes Datum*/
+        .datepicker-table td.is-selected {
+            background-color: red;
+            color: black;
+        }
+
+        /*Textfarbe des heutigen Datums*/
+        .datepicker-table td.is-today {
+            color: blue;
+        }
+
+        /*Styles für das hovern von Daten, Möglichkeit auch mit :Focus zu arbeiten*/
+        .datepicker-day-button:hover{
+            background-color: green;
+        }
+
+        /*Styles der Buttons*/
+        .datepicker-cancel,
+        .datepicker-clear,
+        .datepicker-today,
+        .datepicker-done {
+            color: black;
+        }
+
+        /*Styles der Pfeil Buttons*/
+        .month-prev:focus, .month-next:focus {
+            background-color: rgb(142, 142, 199) !important;
+        }
+        .dropdown-content li>a,
+        .dropdown-content li>span {
+            color: rgb(247, 8, 175);
+        }
+    </style>
+
+    <h2 class="center">Date Picker</h2> 
+    <p id="Absatz1"> 
+        <a class="center" href="https://materializecss.com/pickers.html" 
+            target="_blank">https://materializecss.com/pickers.html</a>; 
+    </p> 
+    <hr> 
+ 
+    <h3 class="center">Datum</h3> 
+    <p class="center">Per JS wird nach 2 Sekunden das aktuelle Datum gesetzt.</p> 
+    <div class="topmargin row"> 
+        <div class="input-field col s4 offset-s4"> 
+            <input id="mydate" type="text" class="datepicker" /> 
+        </div> 
+    </div> 
+ 
+    <p id="Absatz1"> 
+        <button class="btn" id="WerteLesen">Werte auslesen</button> 
+    </p>
+
+
+    <script>
+        // JQuery - Document ready
+        $(function () {
+            // Initialization der select
+            // Datum Initialization
+            $('#mydate').datepicker();
+
+            setTimeout(setDate, 2000); // zwei sekunden warten, dann funktion aufrufen
+
+            // Click - Event
+            $('#WerteLesen').click(function () {
+                // Funktion aufrufen
+                getValue();
+            });
+        });
+        function setDate() {
+            // Datum Initialization
+            var date = new Date();
+            // Variante 1
+            var str = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+            // Variante 2
+            var str = date.toISOString();
+
+            $('#mydate').val(str);
+            // Datum Initialization - Deutsch usw.
+            $('.datepicker').datepicker({
+                format: 'yyyy-mm-dd',
+                setDefaultDate: true,
+                firstDay: 1,
+                selectMonths: true,
+                selectYears: 2,
+                i18n: {
+                    labelMonthNext: 'Nächster Monat',
+                    labelMonthPrev: 'Vorheriger Monat',
+                    labelMonthSelect: 'Monat wählen',
+                    labelYearSelect: 'Jahr wählen',
+                    //Alle nach der Sprache anpassen, damit es am besten funktioniert
+                    months: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'], //Monate
+                    monthsShort: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez'], //Abkurzüng für zum Schreiben links
+                    monthsLong: ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
+                    weekdays: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
+                    weekdaysShort: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'],
+                    weekdaysAbbrev: ['S', 'M', 'D', 'M', 'D', 'F', 'S'],
+                    today: 'Heute',
+                    close: 'schliessen',
+                    cancel: 'abbrechen',
+                    clear: 'löschen',
+                    done: 'wählen'
+                }
+            });
+        }
+        function getValue() {
+            // Wert lesen
+            console.log($('#mydate').val());
+            $('body').append('<hr><p id="Absatz1">Datum: ' + $('#mydate').val() +'</p>');
+        }
+   
+    </script>
+</body>
+
+</html>
